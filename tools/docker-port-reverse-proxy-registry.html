@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Port & Reverse Proxy Ingress Registry — Free Interactive Calculator & Printable System</title>
+    <meta name="description" content="Eliminate container host port collisions and organize SSL reverse proxy routes across your homelab">
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; max-width: 840px; margin: 0 auto; padding: 24px; background: #0f172a; color: #f8fafc; line-height: 1.6; }
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 24px; margin-bottom: 24px; }
+        .cta { background: linear-gradient(135deg, #1e3a8a, #0f172a); border: 2px solid #38bdf8; border-radius: 10px; padding: 24px; text-align: center; }
+        .btn { display: inline-block; background: #22c55e; color: #052e16; font-weight: 700; padding: 12px 24px; border-radius: 6px; text-decoration: none; margin-top: 12px; }
+        input, select, button { padding: 8px 12px; border-radius: 6px; border: 1px solid #475569; background: #0f172a; color: white; margin: 4px 0; }
+        a { color: #38bdf8; }
+    </style>
+</head>
+<body>
+    <p><a href="../index.html">&larr; All Utility Calculators & Systems</a></p>
+    <h1>Docker Port & Reverse Proxy Ingress Registry</h1>
+    <p>Eliminate container host port collisions and organize SSL reverse proxy routes across your homelab</p>
+    <div class="card">
+        <h2>Interactive Quick Calculator</h2>
+        <div class="calc-box" style="max-width:540px;margin:1.5rem auto;padding:1.5rem;background:#1e293b;border-radius:10px;color:#f8fafc;font-family:system-ui,-apple-system,sans-serif;box-shadow:0 10px 25px rgba(0,0,0,0.3);border:1px solid #334155;"><h3 style="margin-top:0;font-size:1.25rem;color:#38bdf8;margin-bottom:0.5rem;">Docker Port Collision & Proxy Configurator</h3><p style="font-size:0.875rem;color:#94a3b8;margin-bottom:1.2rem;">Check potential port conflicts and generate instant Nginx / Docker port map directives.</p><div style="margin-bottom:1rem;"><label style="display:block;font-size:0.8rem;font-weight:600;margin-bottom:0.3rem;">Target Service Default Port:</label><select id="portSelect" style="width:100%;padding:0.5rem;background:#0f172a;border:1px solid #475569;border-radius:6px;color:#f8fafc;font-size:0.9rem;" onchange="evaluatePort()"><option value="3000">3000 (Grafana / Gitea / React dev)</option><option value="8080">8080 (Traefik Admin / qBittorrent / Tomcat)</option><option value="8096">8096 (Jellyfin Media Server)</option><option value="8123">8123 (Home Assistant Core)</option><option value="9000">9000 (Portainer Legacy / MinIO Console)</option><option value="9443">9443 (Portainer SSL / Unifi)</option><option value="custom">Custom Port...</option></select></div><div id="customPortDiv" style="display:none;margin-bottom:1rem;"><label style="display:block;font-size:0.8rem;font-weight:600;margin-bottom:0.3rem;">Enter Custom Host Port:</label><input type="number" id="customPortInput" placeholder="e.g. 5000" style="width:100%;padding:0.5rem;background:#0f172a;border:1px solid #475569;border-radius:6px;color:#f8fafc;font-size:0.9rem;" oninput="evaluatePort()"/></div><div style="margin-bottom:1rem;"><label style="display:block;font-size:0.8rem;font-weight:600;margin-bottom:0.3rem;">Public Ingress Domain / FQDN:</label><input type="text" id="domainInput" value="service.homelab.local" style="width:100%;padding:0.5rem;background:#0f172a;border:1px solid #475569;border-radius:6px;color:#f8fafc;font-size:0.9rem;" oninput="evaluatePort()"/></div><div id="calcResults" style="background:#0f172a;padding:1rem;border-radius:6px;border-left:4px solid #38bdf8;"><div style="font-size:0.85rem;margin-bottom:0.4rem;"><strong style="color:#94a3b8;">Risk Profile:</strong> <span id="riskBadge" style="color:#f59e0b;font-weight:bold;">Moderate Conflict Risk</span></div><div style="font-size:0.85rem;margin-bottom:0.4rem;"><strong style="color:#94a3b8;">Safe Host Port Alternative:</strong> <code id="altPort" style="color:#10b981;font-weight:bold;background:#022c22;padding:2px 6px;border-radius:4px;">3001</code></div><div style="margin-top:0.75rem;"><div style="font-size:0.75rem;color:#94a3b8;margin-bottom:0.25rem;">Recommended Compose Port Mapping:</div><pre id="composeSnippet" style="background:#020617;padding:0.5rem;border-radius:4px;color:#38bdf8;font-size:0.75rem;overflow-x:auto;margin:0;">- "3001:3000"</pre></div></div><script>function evaluatePort(){var sel=document.getElementById('portSelect').value;var customDiv=document.getElementById('customPortDiv');var port=sel;if(sel==='custom'){customDiv.style.display='block';port=document.getElementById('customPortInput').value||'8080';}else{customDiv.style.display='none';}var p=parseInt(port,10);var risk='Low Conflict Hazard';var riskColor='#10b981';var alt=p;if([80,443,3000,8080,9000].includes(p)){risk='High Collision Hazard (Very Common Default)';riskColor='#ef4444';alt=p+1;}else if([8096,8123,9443].includes(p)){risk='Specialized Service (Low collision if single instance)';riskColor='#38bdf8';alt=p;}else if(p<1024){risk='Privileged System Port (Root / CAP_NET_BIND_SERVICE required)';riskColor='#f59e0b';alt=p+8000;}document.getElementById('riskBadge').textContent=risk;document.getElementById('riskBadge').style.color=riskColor;document.getElementById('altPort').textContent=alt;document.getElementById('composeSnippet').textContent='ports:\n  - "'+alt+':'+p+'"';}evaluatePort();</script></div>
+    </div>
+    <div class="cta">
+        <h2>Need the Complete Offline Binder PDF + Editable Excel System?</h2>
+        <p>Download the pre-formatted <strong>Port & Route Registry (.xlsx)</strong> and the printable <strong>Homelab Docker & Ingress Routing Field Guide (.pdf)</strong> reference sheet.</p>
+        <a class="btn" href="https://goochie17.gumroad.com/l/jmkfhh" target="_blank">Download Complete Bundle ($6) &rarr;</a>
+    </div>
+</body>
+</html>
